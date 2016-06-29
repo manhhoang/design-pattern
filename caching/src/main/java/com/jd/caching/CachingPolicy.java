@@ -20,19 +20,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.iluwatar.caching;
-
-import org.junit.Test;
-
-import java.io.IOException;
+package com.jd.caching;
 
 /**
- * Tests that Caching example runs without errors.
+ *
+ * Enum class containing the three caching strategies implemented in the pattern.
+ *
  */
-public class AppTest {
-  @Test
-  public void test() throws IOException {
-    String[] args = {};
-    App.main(args);
+public enum CachingPolicy {
+  THROUGH("through"), AROUND("around"), BEHIND("behind");
+
+  private String policy;
+
+  private CachingPolicy(String policy) {
+    this.policy = policy;
+  }
+
+  public String getPolicy() {
+    return policy;
   }
 }

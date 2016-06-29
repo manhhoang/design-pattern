@@ -20,53 +20,44 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.iluwatar.caching;
+package com.jd.caching;
+
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  *
- * Entity class (stored in cache and DB) used in the application.
+ * Application test
  *
  */
-public class UserAccount {
-  private String userId;
-  private String userName;
-  private String additionalInfo;
+public class CachingTest {
+  App app;
 
   /**
-   * Constructor
+   * Setup of application test includes: initializing DB connection and cache size/capacity.
    */
-  public UserAccount(String userId, String userName, String additionalInfo) {
-    this.userId = userId;
-    this.userName = userName;
-    this.additionalInfo = additionalInfo;
+  @Before
+  public void setUp() {
+    AppManager.initDb(false); // VirtualDB (instead of MongoDB) was used in running the JUnit tests
+                              // to avoid Maven compilation errors. Set flag to true to run the
+                              // tests with MongoDB (provided that MongoDB is installed and socket
+                              // connection is open).
+    AppManager.initCacheCapacity(3);
+    app = new App();
   }
 
-  public String getUserId() {
-    return userId;
+  @Test
+  public void testReadAndWriteThroughStrategy() {
+    app.useReadAndWriteThroughStrategy();
   }
 
-  public void setUserId(String userId) {
-    this.userId = userId;
+  @Test
+  public void testReadThroughAndWriteAroundStrategy() {
+    app.useReadThroughAndWriteAroundStrategy();
   }
 
-  public String getUserName() {
-    return userName;
-  }
-
-  public void setUserName(String userName) {
-    this.userName = userName;
-  }
-
-  public String getAdditionalInfo() {
-    return additionalInfo;
-  }
-
-  public void setAdditionalInfo(String additionalInfo) {
-    this.additionalInfo = additionalInfo;
-  }
-
-  @Override
-  public String toString() {
-    return userId + ", " + userName + ", " + additionalInfo;
+  @Test
+  public void testReadThroughAndWriteBehindStrategy() {
+    app.useReadThroughAndWriteBehindStrategy();
   }
 }

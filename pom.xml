@@ -49,37 +49,37 @@
         <logback.version>1.1.7</logback.version>
     </properties>
     <modules>
-        <module>abstract-factory</module>
+        <module>creational/abstract-factory</module>
         <module>tls</module>
         <module>creational/builder</module>
-        <module>factory-method</module>
-        <module>prototype</module>
-        <module>singleton</module>
+        <module>creational/factory-method</module>
+        <module>creational/prototype</module>
+        <module>creational/singleton</module>
         <module>structural/adapter</module>
-        <module>bridge</module>
-        <module>composite</module>
+        <module>structural/bridge</module>
+        <module>structural/composite</module>
         <module>dao</module>
         <module>data-mapper</module>
-        <module>decorator</module>
-        <module>facade</module>
+        <module>structural\decorator</module>
+        <module>structural\facade</module>
         <module>flyweight</module>
-        <module>proxy</module>
+        <module>structural/proxy</module>
         <module>chain</module>
         <module>behavioral/command</module>
-        <module>interpreter</module>
-        <module>iterator</module>
+        <module>behavioral/interpreter</module>
+        <module>behavioral/iterator</module>
         <module>mediator</module>
-        <module>memento</module>
+        <module>behavioral/memento</module>
         <module>model-view-presenter</module>
-        <module>observer</module>
-        <module>state</module>
-        <module>strategy</module>
-        <module>template-method</module>
-        <module>visitor</module>
+        <module>behavioral/observer</module>
+        <module>behavioral/state</module>
+        <module>behavioral/strategy</module>
+        <module>behavioral/template-method</module>
+        <module>behavioral/visitor</module>
         <module>double-checked-locking</module>
         <module>servant</module>
         <module>service-locator</module>
-        <module>null-object</module>
+        <module>behavioral/null-object</module>
         <module>event-aggregator</module>
         <module>callback</module>
         <module>execute-around</module>
@@ -99,8 +99,8 @@
         <module>resource-acquisition-is-initialization</module>
         <module>thread-pool</module>
         <module>twin</module>
-        <module>private-class-data</module>
-        <module>object-pool</module>
+        <module>structural/private-class-data</module>
+        <module>creational/object-pool</module>
         <module>dependency-injection</module>
         <module>naked-objects</module>
         <module>front-controller</module>

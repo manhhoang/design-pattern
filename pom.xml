@@ -62,13 +62,13 @@
         <module>data-mapper</module>
         <module>structural\decorator</module>
         <module>structural\facade</module>
-        <module>flyweight</module>
+        <module>structural\flyweight</module>
         <module>structural/proxy</module>
         <module>chain</module>
         <module>behavioral/command</module>
         <module>behavioral/interpreter</module>
         <module>behavioral/iterator</module>
-        <module>mediator</module>
+        <module>behavioral/mediator</module>
         <module>behavioral/memento</module>
         <module>model-view-presenter</module>
         <module>behavioral/observer</module>
